@@ -1,0 +1,7 @@
+name: GchantEssentials
+main: me.sirgregg.gchantessentials.GchantEssentials
+version: 1.0
+description: Group of essential enchants for Gchant.
+author: SirGregg
+
+depend: [GchantBase]
