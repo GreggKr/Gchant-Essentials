@@ -42,6 +42,8 @@ public class JumpEnchant extends BaseEnchant {
 
 			List<EnchantWrapper> wrappers = GchantBase.getWrapper().getWrappers(boots);
 
+			if (wrappers == null || wrappers.size() < 1) return;
+
 			int level = -1;
 
 			for (EnchantWrapper wrapper : wrappers) {
