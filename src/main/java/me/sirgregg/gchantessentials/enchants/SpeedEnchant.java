@@ -5,6 +5,7 @@ import com.codingforcookies.armorequip.ArmorType;
 import me.sirgregg.gchantbase.GchantBase;
 import me.sirgregg.gchantbase.enchantsys.BaseEnchant;
 import me.sirgregg.gchantbase.enchantsys.EnchantType;
+import me.sirgregg.gchantbase.enchantsys.wrapper.EnchantWrapper;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,7 +28,7 @@ public class SpeedEnchant extends BaseEnchant {
 	}
 
 	public SpeedEnchant() {
-		super("Speed", materials, EnchantType.ARMOR);
+		super("Speed", 1, 3, materials, EnchantType.ARMOR);
 		GchantBase.getEnchantManager().registerEnchant(this);
 	}
 
@@ -39,8 +40,19 @@ public class SpeedEnchant extends BaseEnchant {
 		if (e.getNewArmorPiece() != null && e.getNewArmorPiece().getType() != Material.AIR) { // Equipping
 			ItemStack boots = e.getNewArmorPiece();
 
+			List<EnchantWrapper> wrappers = GchantBase.getWrapper().getWrappers(boots);
+
+			int level = -1;
+
+			for (EnchantWrapper wrapper : wrappers) {
+				if (wrapper.getEnchant() instanceof SpeedEnchant) {
+					level = wrapper.getLevel();
+					break;
+				}
+			}
+
 			if (hasEnchant(boots)) {
-				player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 0, true, false));
+				player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, level - 1, true, false));
 			}
 		} else if (e.getOldArmorPiece() != null && e.getOldArmorPiece().getType() != Material.AIR) { // Unequipping
 			ItemStack boots = e.getOldArmorPiece();
