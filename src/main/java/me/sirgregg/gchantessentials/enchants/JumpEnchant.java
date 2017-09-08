@@ -58,7 +58,7 @@ public class JumpEnchant extends BaseEnchant {
 //			}
 
 			if (getLevel(boots) == -1) return;
-			
+
 			player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, getLevel(boots) - 1, true, false));
 		} else if (e.getOldArmorPiece() != null && e.getOldArmorPiece().getType() != Material.AIR) { // Unequipping
 			ItemStack boots = e.getOldArmorPiece();
