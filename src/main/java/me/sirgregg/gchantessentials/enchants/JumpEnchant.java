@@ -44,7 +44,7 @@ public class JumpEnchant extends BaseEnchant {
 			int level = -1;
 
 			for (EnchantWrapper wrapper : wrappers) {
-				if (wrapper.getEnchant() instanceof SpeedEnchant) {
+				if (wrapper.getEnchant() instanceof JumpEnchant) {
 					int wrapperLevel = wrapper.getLevel();
 					if (wrapperLevel == -1) return;
 					level = wrapperLevel;
