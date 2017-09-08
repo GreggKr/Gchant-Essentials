@@ -41,14 +41,14 @@ public class SpeedEnchant extends BaseEnchant {
 			ItemStack boots = e.getNewArmorPiece();
 
 			List<EnchantWrapper> wrappers = GchantBase.getWrapper().getWrappers(boots);
-
-			if (wrappers == null || wrappers.size() < 1) return;
-
 			int level = -1;
 
 			for (EnchantWrapper wrapper : wrappers) {
 				if (wrapper.getEnchant() instanceof SpeedEnchant) {
-					level = wrapper.getLevel();
+					int wrapperLevel = wrapper.getLevel();
+					if (wrapperLevel == -1) return;
+
+					level = wrapperLevel;
 					break;
 				}
 			}
