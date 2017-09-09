@@ -38,9 +38,8 @@ public class ExplosiveEnchant extends BaseEnchant {
 				for (int yOff = -1; yOff <= 1; yOff++) {
 					for (int zOff = -1; zOff <= 1; zOff++) {
 						Block block = player.getWorld().getBlockAt(loc).getRelative(xOff, yOff, zOff);
-						if (!block.getType().equals(Material.BEDROCK)) {
-							block.breakNaturally();
-						}
+						if (block.getType().equals(Material.BEDROCK)) continue;
+						block.breakNaturally();
 					}
 				}
 			}
