@@ -40,19 +40,6 @@ public class SpeedEnchant extends BaseEnchant {
 		if (e.getNewArmorPiece() != null && e.getNewArmorPiece().getType() != Material.AIR) { // Equipping
 			ItemStack boots = e.getNewArmorPiece();
 
-//			List<EnchantWrapper> wrappers = GchantBase.getWrapper().getWrappers(boots);
-//			int level = -1;
-//
-//			for (EnchantWrapper wrapper : wrappers) {
-//				if (wrapper.getEnchant() instanceof SpeedEnchant) {
-//					int wrapperLevel = wrapper.getLevel();
-//					if (wrapperLevel == -1) return;
-//
-//					level = wrapperLevel;
-//					break;
-//				}
-//			}
-
 			if (getLevel(boots) == -1) return;
 
 			player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, getLevel(boots) - 1, true, false));
