@@ -27,7 +27,7 @@ public class JumpEnchant extends BaseEnchant {
 	}
 
 	public JumpEnchant() {
-		super("Jump", 1, 3, ChatColor.GRAY, materials);
+		super("Jump", 1, 3, ChatColor.RED, materials);
 		GchantBase.getEnchantManager().registerEnchant(this);
 	}
 

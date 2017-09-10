@@ -1,7 +1,7 @@
 package me.sirgregg.gchantessentials.enchants;
 
 import me.sirgregg.gchantbase.enchantsys.BaseEnchant;
-import me.sirgregg.gchantbase.enchantsys.EnchantType;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -24,7 +24,7 @@ public class ExplosiveEnchant extends BaseEnchant {
 	}
 
 	public ExplosiveEnchant() {
-		super("Explosive", 1, 1, materials, EnchantType.SWORD);
+		super("Explosive", 1, 1, ChatColor.GRAY, materials);
 	}
 
 	@EventHandler
