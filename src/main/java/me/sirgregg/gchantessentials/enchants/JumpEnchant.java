@@ -4,8 +4,7 @@ import com.codingforcookies.armorequip.ArmorEquipEvent;
 import com.codingforcookies.armorequip.ArmorType;
 import me.sirgregg.gchantbase.GchantBase;
 import me.sirgregg.gchantbase.enchantsys.BaseEnchant;
-import me.sirgregg.gchantbase.enchantsys.EnchantType;
-import me.sirgregg.gchantbase.enchantsys.wrapper.EnchantWrapper;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,7 +13,6 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class JumpEnchant extends BaseEnchant {
@@ -29,7 +27,7 @@ public class JumpEnchant extends BaseEnchant {
 	}
 
 	public JumpEnchant() {
-		super("Jump", 1, 3, materials, EnchantType.ARMOR);
+		super("Jump", 1, 3, ChatColor.GRAY, materials);
 		GchantBase.getEnchantManager().registerEnchant(this);
 	}
 

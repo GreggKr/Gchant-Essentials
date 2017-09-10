@@ -4,8 +4,7 @@ import com.codingforcookies.armorequip.ArmorEquipEvent;
 import com.codingforcookies.armorequip.ArmorType;
 import me.sirgregg.gchantbase.GchantBase;
 import me.sirgregg.gchantbase.enchantsys.BaseEnchant;
-import me.sirgregg.gchantbase.enchantsys.EnchantType;
-import me.sirgregg.gchantbase.enchantsys.wrapper.EnchantWrapper;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -28,7 +27,7 @@ public class SpeedEnchant extends BaseEnchant {
 	}
 
 	public SpeedEnchant() {
-		super("Speed", 1, 3, materials, EnchantType.ARMOR);
+		super("Speed", 1, 3, ChatColor.GRAY, materials);
 		GchantBase.getEnchantManager().registerEnchant(this);
 	}
 
