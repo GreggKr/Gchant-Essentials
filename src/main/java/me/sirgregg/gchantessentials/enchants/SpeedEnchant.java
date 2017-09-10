@@ -42,7 +42,7 @@ public class SpeedEnchant extends BaseEnchant {
 
 			if (getLevel(boots) == -1) return;
 
-			player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, getLevel(boots) - 1, true, false));
+			player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, getLevel(boots) - 1, true));
 		} else if (e.getOldArmorPiece() != null && e.getOldArmorPiece().getType() != Material.AIR) { // Unequipping
 			ItemStack boots = e.getOldArmorPiece();
 
